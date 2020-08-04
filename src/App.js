@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+function calculateBoardFeet(width, length, thickness) {
+  return ((width * length * thickness)/12);
+}
+
+export default function App() {
+  const [width, setWidth] = useState("");
+  const [length, setLength] = useState("");
+  const [thickness, setThickness] = useState("");
+  const solution = calculateBoardFeet(width, length, thickness);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="width">
+        <label for="width">Width:</label>
+        <input 
+          type="text"
+          id="width"
+          placeholder="width"
+          value={width}
+          onChange={e => setWidth(e.target.value)}
+          />
+      </div>
+      <div className="length">
+        <label for="length">Length:</label>
+        <input 
+          type="text"
+          id="length"
+          placeholder="length"
+          value={length}
+          onChange={e => setLength(e.target.value)}
+          />
+      </div>
+      <div className="thickness">
+        <label for="thickness">Thickness:</label>
+        <input 
+          type="text"
+          id="thickness"
+          placeholder="thickness"
+          value={thickness}
+          onChange={e => setThickness(e.target.value)}
+          />
+      </div>
+      <div className="solution">
+        <span>{solution}</span>
+      </div>
     </div>
   );
 }
-
-export default App;
