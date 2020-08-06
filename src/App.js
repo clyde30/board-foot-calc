@@ -6,15 +6,15 @@ function calculateBoardFeet(width, length, thickness) {
 }
 
 export default function App() {
-  const [width, setWidth] = useState("");
-  const [length, setLength] = useState("");
-  const [thickness, setThickness] = useState("");
-  const [price, setPrice] = useState("");
+  const [width, setWidth] = useState(0);
+  const [length, setLength] = useState(0);
+  const [thickness, setThickness] = useState(0);
+  const [price, setPrice] = useState(0);
   const solution = calculateBoardFeet(width, length, thickness);
 
   return (
     <div className="App">
-      <div className="width">
+      <div className="input">
         <label for="width">Width:</label>
         <input 
           type="range"
@@ -25,9 +25,16 @@ export default function App() {
           value={width}
           onChange={e => setWidth(e.target.value)}
           />
-          <span>{width}</span>
+          <div>
+            <input 
+              type="number"
+              placeholder={width}
+              value={width}
+              onChange={e => setWidth(e.target.value)}
+            />
+          </div>
       </div>
-      <div className="length">
+      <div className="input">
         <label for="length">Length:</label>
         <input 
           type="range"
@@ -38,9 +45,16 @@ export default function App() {
           value={length}
           onChange={e => setLength(e.target.value)}
           />
-          <span>{length}</span>
+          <div>
+            <input 
+              type="number"
+              placeholder={length}
+              value={length}
+              onChange={e => setLength(e.target.value)}
+            />
+          </div>
       </div>
-      <div className="thickness">
+      <div className="input">
         <label for="thickness">Thickness:</label>
         <select id="thickness" value={thickness} onChange={e => setThickness(e.target.value)}>
           <option value=".50">1/2</option>
@@ -51,8 +65,28 @@ export default function App() {
           <option value="2">8/4</option>
         </select>
       </div>
+      <div className="input">
+        <label for="price">Price</label>
+        <input
+          type="range" 
+          id="price"
+          min=".25"
+          max="100"
+          step=".25"
+          value={price}
+          onChange={e => setPrice(e.target.value)}
+        />
+        <div>
+          <input 
+            type="number"
+            placeholder={price}
+            value={price}
+            onChange={e => setPrice(e.target.value)}
+          />
+        </div>
+      </div>
       <div className="bf">
-        <span>{solution}</span>
+        <span>${solution}</span>
       </div>
     </div>
   );
