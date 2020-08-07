@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    display: flex;
+    flex-direction: row;
+}
+.input-label {
+    background: red;
+    width: 200px;
+}
+
+.input-slider {
+    width: 50%;
+}
+
