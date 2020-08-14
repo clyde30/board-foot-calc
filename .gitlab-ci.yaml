@@ -1,0 +1,11 @@
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script: npm install
+
+deploy-job:
+  stage: deploy
+  script: npm run build
