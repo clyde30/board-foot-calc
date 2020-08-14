@@ -12,4 +12,4 @@ deploy-job:
   stage: deploy
   only:
     - develop
-  script: ls && pwd && npm install && rm -rf /build && npm run build
+  script: npm install && npm run build && cp -vr build/ /var/www/bfcalc
