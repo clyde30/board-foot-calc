@@ -20,7 +20,8 @@ input, select{
     width: 90%;
     margin-right: auto;
     margin-left: auto;
-    background-color: #DBDBDB;
+    background-color: red;
+    /* background-color: #DBDBDB; */
     margin-top: 40px;
 }
 .inputs-container {
