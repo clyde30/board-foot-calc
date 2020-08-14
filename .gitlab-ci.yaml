@@ -4,8 +4,12 @@ stages:
 
 build-job:
   stage: build
+  only:
+    - develop
   script: npm install
 
 deploy-job:
   stage: deploy
+  only:
+    - develop
   script: npm run build
