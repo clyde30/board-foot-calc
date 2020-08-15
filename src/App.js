@@ -11,7 +11,7 @@ export default function App() {
   const [thickness, setThickness] = useState();
   const [price, setPrice] = useState();
   const bf = calculateBoardFeet(width, length, thickness);
-  let amount = (bf * price) || 0;
+  let amount = ((bf * price) || 0).toFixed(2);
 
   return (
     <div className="App">
@@ -22,7 +22,7 @@ export default function App() {
         <div className="inputs-container">
           <div className="input">
             <div>
-              <label>Price</label>
+              <label>Price per board foot</label>
             </div>
             <div>
               <input type="number" placeholder="$" value={price} onChange={e => setPrice(e.target.value)}/>
