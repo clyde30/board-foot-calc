@@ -4,7 +4,7 @@ import ReactGA from 'react-ga';
 
 //Google Analytics
 ReactGA.initialize('UA-121099504-1');
-ReactGA.pageview(location.pathname);
+ReactGA.pageview(Location.pathname);
 
 function calculateBoardFeet(width, length, thickness) {
   return ((width * length * thickness)/12);
