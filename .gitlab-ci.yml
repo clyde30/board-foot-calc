@@ -1,17 +1,15 @@
 stages:
   - build
-  - deploy
+  # - deploy
 
 build-job:
   stage: build
   only:
     - develop
-  script: 
-    - cd deploy/
-    - npm install && npm run build
+  script: npm install && npm run build
 
-deploy-job:
-  stage: deploy
-  only:
-    - develop
-  script: cp -vr build/ /var/www/bfcalc
+# deploy-job:
+#   stage: deploy
+#   only:
+#     - develop
+#   script: cp -vr build/ /var/www/bfcalc
