@@ -12,4 +12,5 @@ deploy-job:
   stage: deploy
   only:
     - develop
-  script: cp -vr build/ /var/www/bfcalc
+  script: cp -vr build/ /home/ubuntu/dev
+  # script: cp -vr build/ /var/www/bfcalc
