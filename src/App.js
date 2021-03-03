@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1>Board Foot Calculator</h1>
+        <h1>Board Foot Calculator Test</h1>
       </div>
       <div className="container">
         <div className="inputs-container">
