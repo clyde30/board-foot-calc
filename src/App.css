@@ -11,8 +11,7 @@ input, select{
 }
 .header {
     width: 100%;
-    background-color: red;
-    /* background-color: #363636; */
+    background-color: #363636;
     color: #ffffff;
     padding: 30px;
 }
