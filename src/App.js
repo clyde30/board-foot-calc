@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import Thickness from './Thickness';
 import './App.css';
 
 function calculateBoardFeet(width, length, thickness) {
   return ((width * length * thickness)/12);
 }
+
 
 export default function App() {
   const [width, setWidth] = useState();
@@ -12,6 +14,10 @@ export default function App() {
   const [price, setPrice] = useState();
   const bf = calculateBoardFeet(width, length, thickness);
   let amount = ((bf * price) || 0).toFixed(2);
+  
+  function updateThickness(newThickness){
+    setThickness(newThickness);
+  }
 
   return (
     <div className="App">
@@ -82,20 +88,7 @@ export default function App() {
               </select>
             </div>
           </div>
-          <div className="input">
-            <div>
-              <label>Thickness</label>
-            </div>
-            <div>
-              <select value={thickness} onChange={e => setThickness(e.target.value)}>
-                <option value="1">4/4</option>
-                <option value="1.25">5/4</option>
-                <option value="1.5">6/4</option>
-                <option value="2">8/4</option>
-                <option value="3">12/4</option>
-              </select>
-            </div>
-          </div>
+        <Thickness thickness={thickness} onChange={updateThickness} />
         </div>
         <div className="totals-container">
           ${amount}
