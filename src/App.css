@@ -1,52 +1,38 @@
-body, button, input, select, textarea {
-    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    margin: 0;
+.App {
+  text-align: center;
 }
-input, select{    
-    -ms-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    -webkit-box-sizing:border-box; 
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
-.header {
-    width: 100%;
-    background-color: #363636;
-    color: #ffffff;
-    padding: 30px;
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
-.container {
-    font-size: 1.5rem;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #DBDBDB;
-    margin-top: 40px;
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
-.inputs-container {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    border-radius: 10px;
+
+.App-link {
+  color: #61dafb;
 }
-.totals-container{
-    background-color: #363636;
-    color: #ffffff;
-    text-align: center;
-    padding: 25px;
-    border-radius: 10px;
-}
-.input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5px;
-}
-.input div {
-    margin-bottom: 5px;
-}
-.input input, select {
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #ffffff;
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
