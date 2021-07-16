@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
+import ReactGA from 'react-ga';
+import LogRocket from 'logrocket';
+
+LogRocket.init('bz2adh/board-foot-calculator');
+
+//Google Analytics
+ReactGA.initialize('UA-121099504-1');
+ReactGA.pageview(Location.pathname);
 
 function calculateBoardFeet(width, length, thickness) {
   return ((width * length * thickness)/12);
