@@ -6,9 +6,9 @@ function calculateBoardFeet(width, length, thickness) {
 }
 
 export default function App() {
-  const [width, setWidth] = useState();
-  const [length, setLength] = useState();
-  const [thickness, setThickness] = useState();
+  const [width, setWidth] = useState(6);
+  const [length, setLength] = useState(8);
+  const [thickness, setThickness] = useState(4/4);
   const [price, setPrice] = useState();
   const bf = calculateBoardFeet(width, length, thickness);
   let amount = ((bf * price) || 0).toFixed(2);
