@@ -21,6 +21,7 @@ input, select{
     margin-left: auto;
     background-color: #DBDBDB;
     margin-top: 40px;
+    max-width: 800px;
 }
 .inputs-container {
     display: flex;
