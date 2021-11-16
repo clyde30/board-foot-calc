@@ -10,7 +10,6 @@ input, select{
     -webkit-box-sizing:border-box; 
 }
 .header {
-    width: 100%;
     background-color: #363636;
     color: #ffffff;
     padding: 30px;
@@ -27,14 +26,14 @@ input, select{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .totals-container{
     background-color: #363636;
     color: #ffffff;
     text-align: center;
     padding: 25px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .input {
     display: flex;
