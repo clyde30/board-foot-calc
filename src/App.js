@@ -9,17 +9,39 @@ LogRocket.init('bz2adh/board-foot-calculator');
 ReactGA.initialize('UA-121099504-1');
 ReactGA.pageview(Location.pathname);
 
-function calculateBoardFeet(width, length, thickness) {
-  return ((width * length * thickness)/12);
-}
+//get board feet from api with board length and board width and board thickness
+const getBoardFeet = async (width,length, thickness) => {
+  const apiUrl = `https://pkm3vqx465.execute-api.us-east-1.amazonaws.com/test/bfc`;
+  
+  //build json object to send to api
+  const data = {
+    "board_width": width,
+    "board_length": length,
+    "board_thickness": thickness
+  }
+  //send json object to api
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+
+    },
+    body: JSON.stringify(data)
+  });
+  //get response from api
+  const json = await response.json();
+  //return response
+  console.log(json);
+  return json;
+}; 
 
 export default function App() {
   const [width, setWidth] = useState(6);
   const [length, setLength] = useState(8);
   const [thickness, setThickness] = useState(4/4);
   const [price, setPrice] = useState();
-  const bf = calculateBoardFeet(width, length, thickness);
-  let amount = ((bf * price) || 0).toFixed(2);
+  let boardFeet = getBoardFeet(width,length,thickness).body;
+  let amount = ((boardFeet * price) || 0).toFixed(2);
 
   return (
     <div className="App">
