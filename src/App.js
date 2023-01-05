@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
-import ReactGA from 'react-ga';
-import LogRocket from 'logrocket';
+// import ReactGA from 'react-ga';
+// import LogRocket from 'logrocket';
 
-LogRocket.init('bz2adh/board-foot-calculator');
+// LogRocket.init('bz2adh/board-foot-calculator');
 
 //Google Analytics
-ReactGA.initialize('UA-121099504-1');
-ReactGA.pageview(Location.pathname);
+// ReactGA.initialize('UA-121099504-1');
+// ReactGA.pageview(Location.pathname);
 
 //get board feet from api with board length and board width and board thickness
 const getBoardFeet = async (width,length, thickness) => {
-  const apiUrl = `https://pkm3vqx465.execute-api.us-east-1.amazonaws.com/test/bfc`;
+  const apiUrl = `https://ej3a48bj9c.execute-api.us-east-1.amazonaws.com/BoardFootCalculator`;
   
   //build json object to send to api
   const data = {
@@ -19,29 +20,23 @@ const getBoardFeet = async (width,length, thickness) => {
     "board_length": length,
     "board_thickness": thickness
   }
-  //send json object to api
-  const response = await fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
 
-    },
-    body: JSON.stringify(data)
+  const response = await axios.get(apiUrl, {
+    params: data
   });
-  //get response from api
-  const json = await response.json();
-  //return response
-  console.log(json);
-  return json;
-}; 
+
+  console.log(response);
+  
+  return response.data;
+}
 
 export default function App() {
   const [width, setWidth] = useState(6);
   const [length, setLength] = useState(8);
   const [thickness, setThickness] = useState(4/4);
-  const [price, setPrice] = useState();
-  let boardFeet = getBoardFeet(width,length,thickness).body;
-  let amount = ((boardFeet * price) || 0).toFixed(2);
+  // const [price, setPrice] = useState();
+  let boardFeet = getBoardFeet(width,length,thickness);
+  // let amount = ((boardFeet * price) || 0).toFixed(2);
 
   return (
     <div className="App">
@@ -55,7 +50,7 @@ export default function App() {
               <label>Price per board foot</label>
             </div>
             <div>
-              <input type="number" placeholder="$" value={price} onChange={e => setPrice(e.target.value)}/>
+              {/* <input type="number" placeholder="$" value={price} onChange={e => setPrice(e.target.value)}/> */}
             </div>
           </div>
           <div className="input">
@@ -128,7 +123,7 @@ export default function App() {
           </div>
         </div>
         <div className="totals-container">
-          ${amount}
+          ${boardFeet}
         </div>
       </div>
     </div>
