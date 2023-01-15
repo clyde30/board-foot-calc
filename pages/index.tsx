@@ -14,11 +14,11 @@ const Home: NextPage = () => {
             <div className='flex flex-col'>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="price">Price / BF</label>
-                <input type="number" name="price" id="price" placeholder='$'/>
+                <input className='rounded p-3 bg-white' type="number" name="price" id="price" placeholder='$'/>
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="length">Length(ft)</label>
-                <select name="length" id="length">
+                <select className='rounded p-3 bg-white' name="length" id="length">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="width">Width(in)</label>
-                <select name="width" id="width">
+                <select className='rounded p-3 bg-white' name="width" id="width">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="thickness">Thickness(in)</label>
-                <select name="thickness" id="thickness">
+                <select className='rounded p-3 bg-white' name="thickness" id="thickness">
                   <option value="4/4">4/4</option>
                   <option value="5/4">5/4</option>
                   <option value="8/4">8/4</option>
