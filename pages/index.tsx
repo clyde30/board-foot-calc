@@ -9,8 +9,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <div className='w-96 shadow-2xl shadow-black'>
-          <div className='container bg-orange-300 pt-6 px-6 rounded-t-lg'>
+        <div className='w-96'>
+          <div className='container bg-orange-300 pt-6 px-6 rounded-t-lg shadow-2xl'>
             <div className='flex flex-col'>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="price">Price / BF</label>
