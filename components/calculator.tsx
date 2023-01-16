@@ -10,7 +10,7 @@ function Calculator() {
 
     useEffect(() => {
         let boardFoot = (length * width * thickness) / 12;
-        setCost((price * boardFoot).toFixed(2));
+        setCost(parseFloat((price * boardFoot).toFixed(2)));
     }, [price, length, width, thickness]);
 
     return (
@@ -19,11 +19,11 @@ function Calculator() {
             <div className='flex flex-col'>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="price">Price / BF</label>
-                <input className='rounded p-3 bg-white' value={price} onChange={e => setPrice(e.target.value)} type="number" name="price" id="price" placeholder='$'/>
+                <input className='rounded p-3 bg-white' value={price} onChange={e => setPrice(parseInt(e.target.value))} type="number" name="price" id="price" placeholder='$'/>
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="length">Length(ft)</label>
-                <select className='rounded p-3 bg-white' value={length} onChange={e => setLength(e.target.value)} name="length" id="length">
+                <select className='rounded p-3 bg-white' value={length} onChange={e => setLength(parseInt(e.target.value))} name="length" id="length">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -40,7 +40,7 @@ function Calculator() {
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="width">Width(in)</label>
-                <select className='rounded p-3 bg-white' value={width} onChange={e => setWidth(e.target.value)} name="width" id="width">
+                <select className='rounded p-3 bg-white' value={width} onChange={e => setWidth(parseInt(e.target.value))} name="width" id="width">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -61,7 +61,7 @@ function Calculator() {
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="thickness">Thickness(in)</label>
-                <select className='rounded p-3 bg-white' value={thickness} onChange={e => setThickness(e.target.value)} name="thickness" id="thickness">
+                <select className='rounded p-3 bg-white' value={thickness} onChange={e => setThickness(parseInt(e.target.value))} name="thickness" id="thickness">
                   <option value="1">4/4</option>
                   <option value="1.25">5/4</option>
                     <option value="1.5">6/4</option>
