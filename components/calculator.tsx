@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+interface UserInput {
+    price: number;
+    length: number;
+    width: number;
+    thickness: number;
+}
+
 function Calculator() {
     const [price, setPrice] = useState(0);
     const [length, setLength] = useState(1);
@@ -19,7 +26,7 @@ function Calculator() {
             <div className='flex flex-col'>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="price">Price / BF</label>
-                <input className='rounded p-3 bg-white' value={price} onChange={e => setPrice(parseInt(e.target.value))} type="number" name="price" id="price" placeholder='$'/>
+                <input className='rounded p-3 bg-white' value={price} onChange={e => setPrice(parseFloat(e.target.value))} type="number" name="price" id="price" placeholder='$'/>
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="length">Length(ft)</label>
@@ -61,10 +68,10 @@ function Calculator() {
               </div>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="thickness">Thickness(in)</label>
-                <select className='rounded p-3 bg-white' value={thickness} onChange={e => setThickness(parseInt(e.target.value))} name="thickness" id="thickness">
+                <select className='rounded p-3 bg-white' value={thickness} onChange={e => setThickness(parseFloat(e.target.value))} name="thickness" id="thickness">
                   <option value="1">4/4</option>
                   <option value="1.25">5/4</option>
-                    <option value="1.5">6/4</option>
+                  <option value="1.5">6/4</option>
                   <option value="2">8/4</option>
                 </select>
               </div>
