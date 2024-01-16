@@ -22,7 +22,7 @@ function Calculator() {
 
     return (
         <div className='w-96'>
-          <div className='container bg-blue-300 pt-6 px-6 rounded-t-lg shadow-2xl'>
+          <div className='container bg-red-300 pt-6 px-6 rounded-t-lg shadow-2xl'>
             <div className='flex flex-col'>
               <div className="mb-4 flex flex-col">
                 <label htmlFor="price">Price / BF</label>
